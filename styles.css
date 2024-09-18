@@ -1,0 +1,16 @@
+header{
+    text-align: center;
+    background-color: #F5E7B2;
+    font-family: 'Times New Roman', Times, serif;
+    color: #E0A75E;
+    text-shadow: 3px 3px 5px #F9D689 ;
+    font-size: 40px;
+}
+.body{
+    background-color: #F5E7B2;
+}
+.separador{
+    color: #973131;
+    background-color: #E0A75E;
+    height: 15px;
+}
