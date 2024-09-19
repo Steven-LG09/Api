@@ -14,3 +14,65 @@ header{
     background-color: #E0A75E;
     height: 15px;
 }
+.addTitle{
+    text-align: center;
+    background-color: #F5E7B2;
+    font-family: 'Times New Roman', Times, serif;
+    color: #973131;
+    text-shadow: 3px 3px 5px #F9D689 ;
+}
+.line1{
+    display: flex;
+}
+.row1{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    width: 50%;
+}
+.row2{
+    width: 30%;
+}
+.row1_1{
+    width: 25%;
+}
+.create{
+    width: 50%;
+}
+.textCreate{
+    font-family: 'Times New Roman', Times, serif;
+    color: #973131;
+    font-size: large;
+}
+.box{
+    border-radius: 10px;
+    background-color: whitesmoke;
+    border: 2px solid #E0A75E;
+    color: #973131;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    width: 250px;
+}
+.space{
+    height: 100px;
+}
+.adds{
+    display: flex;
+}
+.card{
+    padding: 10px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.bCreate{
+    font-family: 'Times New Roman', Times, serif;
+    border-color: #E0A75E;
+    width: 100px;
+    border-radius: 10px;
+    border-width: 0.1px;
+    color: #973131;
+    background-color: whitesmoke;
+    font-size: large;
+    cursor: grabbing;
+    box-shadow: 0 12px 16px 0 white, 0 17px 50px 0 #E0A75E;
+    margin-left: 20%;
+}

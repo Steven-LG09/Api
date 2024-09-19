@@ -16,25 +16,38 @@
     <header>Apartarriendos</header>
     <hr class="separador">
     <body class="body">
+        <div class="line1">
+            <div class="create">
+                <h2 class="addTitle">Crear Anuncio</h2>
+            </div>
+            <div class="create">
+                <h2 class="addTitle">Crear Anuncio</h2>
+            </div> 
+        </div>
+        <div class="line1">
+            <div class="row1">
+                <div class="row1_1">
+                    <label for="title" class="textCreate">Titulo del Anuncio</label><br>
+                    <label for="description" class="textCreate">Descripción</label><br>
+                    <label for="value" class="textCreate">Precio de renta</label><br>
+                    <label for="imanumberge" class="textCreate">Imagen</label><br>
+                </div>
+                <div class="row1_2">
+                    <input id="title" type="text" class="box"><br>
+                    <input id="description" type="text" class="box"><br>
+                    <input id="value" type="number" class="box"><br>
+                    <input id="image" type="text" class="box"><br>
+                </div>
+            </div>
+            <div class="row2">
+    
+            </div>
+        </div>
+        <button onclick="sendForm()" class="bCreate"> Crear</button>
 
-        <h1>Tituolo</h1>
-
-        <label for="title"> Title</label>
-        <input id="title" type="text">
-
-        <label for="description">Description</label>
-        <input id="description" type="text">
-
-        <label for="value">Value</label>
-        <input id="value" type="number">
-
-        <label for="imanumberge">Image</label>
-        <input id="image" type="text">
-
-        <button onclick="sendForm()"> Guardar</button>
-
-        <h1>ul1</h1>
-        <div id="list"></div>
+        <div class="space"></div>
+        <h2 class="addTitle">Anuncios Disponibles</h2>
+        <div id="list" class="adds"></div>
 
     </body>
     <script

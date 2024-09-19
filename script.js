@@ -18,8 +18,9 @@ fetch("https://fake-api-vq1l.onrender.com/posts", {
       const myhtml = ` 
         <div class="card" style="width: 18rem;">
           <img src="${images[0]}" class="card-img-top" alt="error en imagen">
-          <div class="card-body">
+          <div class="card-body card">
             <h5 class="card-title">${product.title}</h5>
+            <p class="card-text">${product.description}</p>
             <p class="card-text">${product.value}</p>
             <a class="btn btn-warning">Edit</a>
             <a onclick="deletePost(${product.id})" class="btn btn-danger">Delete</a>
