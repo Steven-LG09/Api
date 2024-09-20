@@ -16,14 +16,15 @@ fetch("https://fake-api-vq1l.onrender.com/posts", {
       const il = document.createElement("li");
       const images = JSON.parse(product.images)
       const myhtml = ` 
-        <div class="card" style="width: 18rem;">
-          <img src="${images[0]}" class="card-img-top" alt="error en imagen">
-          <div class="card-body card">
-            <h5 class="card-title">${product.title}</h5>
+        <div class="card " style="width: 18rem; border: 2px solid #F5E7B2;background-color: #F5E7B2;">
+          <img src="${images[0]}" class="card-img-top image" alt="error en imagen">
+          <div class="card-body card" style="border: 2px solid #E0A75E; background-color: #FFEEA9;">
+            <h5 class="card-title" style="color: #E85C0D">${product.title}</h5>
             <p class="card-text">${product.description}</p>
             <p class="card-text">${product.value}</p>
-            <a class="btn btn-warning">Edit</a>
-            <a onclick="deletePost(${product.id})" class="btn btn-danger">Delete</a>
+            <Button class="bEditar">Editar</Button>
+            <p></p>
+            <Button onclick="deletePost(${product.id})" class="bEliminar">Eliminar</Button>
           </div>
         </div>
       `; 

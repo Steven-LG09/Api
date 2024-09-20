@@ -2,8 +2,8 @@ header{
     text-align: center;
     background-color: #F5E7B2;
     font-family: 'Times New Roman', Times, serif;
-    color: #E0A75E;
-    text-shadow: 3px 3px 5px #F9D689 ;
+    color: #D8A25E;
+    text-shadow: 3px 3px 5px #d1ab7c ;
     font-size: 40px;
 }
 .body{
@@ -18,7 +18,7 @@ header{
     text-align: center;
     background-color: #F5E7B2;
     font-family: 'Times New Roman', Times, serif;
-    color: #973131;
+    color: #E0A75E;
     text-shadow: 3px 3px 5px #F9D689 ;
 }
 .line1{
@@ -58,6 +58,7 @@ header{
 }
 .adds{
     display: flex;
+    list-style: none; 
 }
 .card{
     padding: 10px;
@@ -73,6 +74,26 @@ header{
     background-color: whitesmoke;
     font-size: large;
     cursor: grabbing;
-    box-shadow: 0 12px 16px 0 white, 0 17px 50px 0 #E0A75E;
     margin-left: 20%;
+}
+.image{
+    width: 100px;
+    height: 200px;
+    border: 2px solid #E0A75E;
+    border-radius: 10px;
+    padding: 5px;
+}
+.bEliminar{
+    font-family: 'Times New Roman', Times, serif;
+    border-color: black;
+    width: auto;
+    border-radius: 10px;
+    border-width: 0.1px;
+    color: white;
+    background-color: red;
+    font-size: large;
+    cursor: grabbing;
+}
+ul li::marker{
+    color: #D8A25E;
 }
