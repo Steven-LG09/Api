@@ -83,17 +83,27 @@ header{
     border-radius: 10px;
     padding: 5px;
 }
-.bEliminar{
+.bEliminar,.bEditar{
     font-family: 'Times New Roman', Times, serif;
     border-color: black;
-    width: auto;
+    width: 70px;
+    height: 50px;
     border-radius: 10px;
     border-width: 0.1px;
     color: white;
-    background-color: red;
     font-size: large;
     cursor: grabbing;
 }
+.iEliminar{
+    height: 30px;
+}
 ul li::marker{
     color: #D8A25E;
+}
+.Buttons{
+    display: flex;
+}
+.Button1{
+    width: 50%;
+    text-align: center;
 }
