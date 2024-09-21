@@ -22,9 +22,18 @@ fetch("https://fake-api-vq1l.onrender.com/posts", {
             <h5 class="card-title" style="color: #E85C0D">${product.title}</h5>
             <p class="card-text">${product.description}</p>
             <p class="card-text">${product.value}</p>
-            <Button class="bEditar">Editar</Button>
-            <p></p>
-            <Button onclick="deletePost(${product.id})" class="bEliminar">Eliminar</Button>
+            <div class="Buttons">
+              <div class="Button1">
+                <Button class="bEditar">
+                  <img src="pen.png" class="iEliminar"/>
+                </Button>
+              </div>
+              <div class="Button1">
+                <Button onclick="deletePost(${product.id})" class="bEliminar">
+                  <img src="delete.png" class="iEliminar"/>
+                </Button>
+              </div>
+            </div>
           </div>
         </div>
       `; 
