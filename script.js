@@ -20,7 +20,7 @@ fetch("https://fake-api-vq1l.onrender.com/posts", {
           <div class="card-body card" style="border: 2px solid #E0A75E; background-color: #FFEEA9;">
             <h5 class="card-title" style="color: #E85C0D">${product.title}</h5>
             <p class="card-text">${product.description}</p>
-            <p class="card-text">$ ${product.value}</p>
+            <p class="card-text">${product.value}</p>
             <div class="Buttons">
               <div class="Button1">
                 <Button class="bEditar">
