@@ -18,12 +18,12 @@ fetch("https://fake-api-vq1l.onrender.com/posts", {
         box-shadow: 0 12px 16px 0 #d1ab7c, 0 17px 50px 0 #F9D689;">
           <img src="${images[0]}" class="card-img-top image" alt="error en imagen">
           <div class="card-body card" style="border: 2px solid #E0A75E; background-color: #FFEEA9;">
-            <h5 class="card-title" style="color: #E85C0D">${product.title}</h5>
-            <p class="card-text">${product.description}</p>
-            <p class="card-text">${product.value}</p>
+            <h5 class="card-title" style="color: #E85C0D" id="titulo">${product.title}</h5>
+            <p class="card-text">${product.description}</p> 
+            <p class="card-text">$ ${product.value}</p>
             <div class="Buttons">
               <div class="Button1">
-                <Button class="bEditar">
+                <Button class="bEditar" onclick="editPost(${product.id})">
                   <img src="pen.png" class="iEliminar"/>
                 </Button>
               </div>
@@ -35,12 +35,11 @@ fetch("https://fake-api-vq1l.onrender.com/posts", {
             </div>
           </div>
         </div>
-      `; 
+      `;
       il.innerHTML =  myhtml;
       list.appendChild(il); 
     })
   });
-
 
 function sendForm(){
   const title = document.getElementById("title");
@@ -90,5 +89,37 @@ function deletePost(id){
       "respuesta de la api", res
     )
     location.reload();
+  })
+}
+
+function editPost(id){
+  fetch(`https://fake-api-vq1l.onrender.com/posts/${id}`, {
+    method: "PATCH", 
+    headers: {
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjE1LCJlbWFpbCI6InN0ZXZlbi5sb3BlejJAdXRwLmVkdS5jbyIsImlhdCI6MTcyNjY4MTkzMiwiZXhwIjoxNzQzOTYxOTMyfQ.B4COfQ30uuvJjfW-t7nRCm6uSoFq_sVpEip5iy5S6rQ",
+    },
+  })
+  .then( res => res.json())
+  .then( res => {
+    console.log(
+      "respuesta de la api", res
+    )
+    var modal = document.getElementById("myModal");
+
+    var span = document.getElementsByClassName("close")[0];
+
+    modal.style.display= "block";
+    
+    document.getElementById("title1").value = document.getElementById("titulo");
+
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
   })
 }

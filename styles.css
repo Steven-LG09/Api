@@ -129,4 +129,25 @@ ul li::marker{
     padding: 5px;
     border-radius: 5px;
     border: 2px solid #E0A75E;
+    box-shadow: 0 12px 16px 0 #d1ab7c, 0 17px 50px 0 #F9D689;
 }
+::-webkit-scrollbar{
+    width: 15px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: #F5E7B2; 
+    border-radius: 10px;    
+    border: 2px solid  #E0A75E;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: white;
+  }
+  #myModal{
+    width: 1000px;
+    font-family: 'Times New Roman', Times, serif;
+  }
+  #modal1{
+    background-color: #F5E7B2;
+    border: 2px solid  #E0A75E;
+    border-radius: 10px;
+  }
