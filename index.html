@@ -53,21 +53,17 @@
         <div id="myModal" class="modal">
             <div class="modal-content" id="modal1">
                 <span class="close">&times;</span>
-                <div class="line1">
-                    <div class="row1_1">
-                        <label for="title" class="textCreate">Titulo del Anuncio</label><br>
-                        <label for="description" class="textCreate">Descripción</label><br>
-                        <label for="value" class="textCreate">Precio de renta</label><br>
-                        <label for="imanumberge" class="textCreate">Imagen</label><br>
-                    </div>
-                    <div class="row1_2">
-                        <input id="title1" type="text" class="box"><br>
-                        <input id="description1" type="text" class="box"><br>
-                        <input id="value1" type="number" class="box"><br>
-                        <input id="image1" type="text" class="box"><br>
-                    </div>
-                </div>
-                <button id="update" class="bCreate"> Actualizar</button>
+                <form id="updateForm">
+                    <label for="title1" class="textCreate">Titulo del Anuncio</label>
+                    <input id="title1" type="text" class="box"><br>
+                    <label for="description1" class="textCreate">Descripción</label>
+                    <input id="description1" type="text" class="box">
+                    <label for="value1" class="textCreate">Precio de renta</label>
+                    <input id="value1" type="number" class="box">
+                    <label for="imanumberge1" class="textCreate">Imagen</label>
+                    <input id="image1" type="text" class="box">
+                </form>
+                <button onclick="editar()" class="bCreate"> Actualizar</button>
             </div>
         </div>
     </body>

@@ -108,22 +108,40 @@ function editPost(id){
       modal.style.display = "none";
     }
   }
-  var updated =document.getElementById("update");
-
-  updated.onclick = function(){
-    const updatedData = {
-      title1: document.getElementById("title1").value,
-      description1: document.getElementById("description1").value,
-      value1: document.getElementById("value1").value,
-      image1: document.getElementById("image1").value
-    };
-  }
   fetch(`https://fake-api-vq1l.onrender.com/posts/${id}`, {
-    method: "PATCH", 
+    method: "DELETE", 
     headers: {
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjE1LCJlbWFpbCI6InN0ZXZlbi5sb3BlejJAdXRwLmVkdS5jbyIsImlhdCI6MTcyNjY4MTkzMiwiZXhwIjoxNzQzOTYxOTMyfQ.B4COfQ30uuvJjfW-t7nRCm6uSoFq_sVpEip5iy5S6rQ",
     },
-    body: JSON.stringify(updatedData)
+  })
+  .then( res => res.json())
+  .then( res => {
+    console.log(
+      "respuesta de la api", res
+    )
+  })
+} 
+
+function editar(){
+  const title = document.getElementById("title1");
+  const description = document.getElementById("description1");
+  const value = document.getElementById("value1");
+  const image = document.getElementById("image1");
+  const body ={
+    title: title.value,
+    description: description.value,
+    value: value.value,
+    images: [image.value] 
+  }
+
+
+  fetch("https://fake-api-vq1l.onrender.com/posts", {
+    method: "POST", 
+    headers: {
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjE1LCJlbWFpbCI6InN0ZXZlbi5sb3BlejJAdXRwLmVkdS5jbyIsImlhdCI6MTcyNjY4MTkzMiwiZXhwIjoxNzQzOTYxOTMyfQ.B4COfQ30uuvJjfW-t7nRCm6uSoFq_sVpEip5iy5S6rQ",
+      "Content-type": "application/json"
+    },
+    body: JSON.stringify(body)
   })
   .then( res => res.json())
   .then( res => {
@@ -133,3 +151,5 @@ function editPost(id){
     location.reload();
   })
 }
+
+
