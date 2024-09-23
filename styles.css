@@ -143,11 +143,14 @@ ul li::marker{
     background-color: white;
   }
   #myModal{
-    width: 1000px;
+    width: 400px;
     font-family: 'Times New Roman', Times, serif;
   }
   #modal1{
     background-color: #F5E7B2;
     border: 2px solid  #E0A75E;
     border-radius: 10px;
+  }
+  .form{
+    text-align: right;
   }

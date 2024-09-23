@@ -97,6 +97,8 @@ function editPost(id){
 
   var span = document.getElementsByClassName("close")[0];
 
+  var updateForm = document.getElementById("update");
+
   modal.style.display= "block";
 
   span.onclick = function() {
@@ -108,48 +110,49 @@ function editPost(id){
       modal.style.display = "none";
     }
   }
-  fetch(`https://fake-api-vq1l.onrender.com/posts/${id}`, {
-    method: "DELETE", 
-    headers: {
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjE1LCJlbWFpbCI6InN0ZXZlbi5sb3BlejJAdXRwLmVkdS5jbyIsImlhdCI6MTcyNjY4MTkzMiwiZXhwIjoxNzQzOTYxOTMyfQ.B4COfQ30uuvJjfW-t7nRCm6uSoFq_sVpEip5iy5S6rQ",
-    },
-  })
-  .then( res => res.json())
-  .then( res => {
-    console.log(
-      "respuesta de la api", res
-    )
-  })
+
+  updateForm.onclick = function(){
+    const title = document.getElementById("title1");
+    const description = document.getElementById("description1");
+    const value = document.getElementById("value1");
+    const image = document.getElementById("image1");
+    const body ={
+      title: title.value,
+      description: description.value,
+      value: value.value,
+      images: [image.value] 
+    }
+  
+  
+    fetch("https://fake-api-vq1l.onrender.com/posts", {
+      method: "POST", 
+      headers: {
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjE1LCJlbWFpbCI6InN0ZXZlbi5sb3BlejJAdXRwLmVkdS5jbyIsImlhdCI6MTcyNjY4MTkzMiwiZXhwIjoxNzQzOTYxOTMyfQ.B4COfQ30uuvJjfW-t7nRCm6uSoFq_sVpEip5iy5S6rQ",
+        "Content-type": "application/json"
+      },
+      body: JSON.stringify(body)
+    })
+    .then( res => res.json())
+    .then( res => {
+      console.log(
+        "respuesta de la api", res
+      )
+    })
+    fetch(`https://fake-api-vq1l.onrender.com/posts/${id}`, {
+      method: "DELETE", 
+      headers: {
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjE1LCJlbWFpbCI6InN0ZXZlbi5sb3BlejJAdXRwLmVkdS5jbyIsImlhdCI6MTcyNjY4MTkzMiwiZXhwIjoxNzQzOTYxOTMyfQ.B4COfQ30uuvJjfW-t7nRCm6uSoFq_sVpEip5iy5S6rQ",
+      },
+    })
+    .then( res => res.json())
+    .then( res => {
+      console.log(
+        "respuesta de la api", res
+      )
+      location.reload();
+    })
+  }
 } 
 
-function editar(){
-  const title = document.getElementById("title1");
-  const description = document.getElementById("description1");
-  const value = document.getElementById("value1");
-  const image = document.getElementById("image1");
-  const body ={
-    title: title.value,
-    description: description.value,
-    value: value.value,
-    images: [image.value] 
-  }
-
-
-  fetch("https://fake-api-vq1l.onrender.com/posts", {
-    method: "POST", 
-    headers: {
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjE1LCJlbWFpbCI6InN0ZXZlbi5sb3BlejJAdXRwLmVkdS5jbyIsImlhdCI6MTcyNjY4MTkzMiwiZXhwIjoxNzQzOTYxOTMyfQ.B4COfQ30uuvJjfW-t7nRCm6uSoFq_sVpEip5iy5S6rQ",
-      "Content-type": "application/json"
-    },
-    body: JSON.stringify(body)
-  })
-  .then( res => res.json())
-  .then( res => {
-    console.log(
-      "respuesta de la api", res
-    )
-    location.reload();
-  })
-}
 
 
