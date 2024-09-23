@@ -93,33 +93,43 @@ function deletePost(id){
 }
 
 function editPost(id){
+  var modal = document.getElementById("myModal");
+
+  var span = document.getElementsByClassName("close")[0];
+
+  modal.style.display= "block";
+
+  span.onclick = function() {
+    modal.style.display = "none";
+  }
+
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+  var updated =document.getElementById("update");
+
+  updated.onclick = function(){
+    const updatedData = {
+      title1: document.getElementById("title1").value,
+      description1: document.getElementById("description1").value,
+      value1: document.getElementById("value1").value,
+      image1: document.getElementById("image1").value
+    };
+  }
   fetch(`https://fake-api-vq1l.onrender.com/posts/${id}`, {
     method: "PATCH", 
     headers: {
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjE1LCJlbWFpbCI6InN0ZXZlbi5sb3BlejJAdXRwLmVkdS5jbyIsImlhdCI6MTcyNjY4MTkzMiwiZXhwIjoxNzQzOTYxOTMyfQ.B4COfQ30uuvJjfW-t7nRCm6uSoFq_sVpEip5iy5S6rQ",
     },
+    body: JSON.stringify(updatedData)
   })
   .then( res => res.json())
   .then( res => {
     console.log(
       "respuesta de la api", res
     )
-    var modal = document.getElementById("myModal");
-
-    var span = document.getElementsByClassName("close")[0];
-
-    modal.style.display= "block";
-    
-    document.getElementById("title1").value = document.getElementById("titulo");
-
-    span.onclick = function() {
-      modal.style.display = "none";
-    }
-
-    window.onclick = function(event) {
-      if (event.target == modal) {
-        modal.style.display = "none";
-      }
-    }
+    location.reload();
   })
 }
