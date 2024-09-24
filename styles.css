@@ -56,6 +56,15 @@ header{
     text-align: center;
     width: 250px;
 }
+.box1{
+    border-radius: 10px;
+    background-color: whitesmoke;
+    border: 2px solid #E0A75E;
+    color: #973131;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    width: 500px;
+}
 .space{
     height: 100px;
 }
@@ -143,7 +152,7 @@ ul li::marker{
     background-color: white;
   }
   #myModal{
-    width: 400px;
+    width: 700px;
     font-family: 'Times New Roman', Times, serif;
   }
   #modal1{

@@ -23,7 +23,7 @@ fetch("https://fake-api-vq1l.onrender.com/posts", {
             <p class="card-text">$ ${product.value}</p>
             <div class="Buttons">
               <div class="Button1">
-                <Button class="bEditar" onclick="editPost(${product.id})">
+                <Button class="bEditar" onclick="editPost(${product.id},${product.value},'${product.title}','${product.description}','${images[0]}')">
                   <img src="pen.png" class="iEliminar"/>
                 </Button>
               </div>
@@ -92,12 +92,22 @@ function deletePost(id){
   })
 }
 
-function editPost(id){
+function editPost(id,value,title,description,images){
   var modal = document.getElementById("myModal");
 
   var span = document.getElementsByClassName("close")[0];
 
   var updateForm = document.getElementById("update");
+
+  let titulo = document.getElementById("title1");
+  let descripcion = document.getElementById("description1");
+  const precio = document.getElementById("value1");
+  let imagen = document.getElementById("image1");
+
+  titulo.value = `${title}`
+  descripcion.value = `${description}`
+  precio.value = `${value}`
+  imagen.value = `${images}`
 
   modal.style.display= "block";
 
@@ -133,11 +143,7 @@ function editPost(id){
       body: JSON.stringify(body)
     })
     .then( res => res.json())
-    .then( res => {
-      console.log(
-        "respuesta de la api", res
-      )
-    })
+    
     fetch(`https://fake-api-vq1l.onrender.com/posts/${id}`, {
       method: "DELETE", 
       headers: {
