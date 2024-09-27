@@ -134,21 +134,13 @@ function editPost(id,value,title,description,images){
     }
   
   
-    fetch("https://fake-api-vq1l.onrender.com/posts", {
-      method: "POST", 
+    fetch(`https://fake-api-vq1l.onrender.com/posts/${id}`, {
+      method: "PATCH", 
       headers: {
         "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjE1LCJlbWFpbCI6InN0ZXZlbi5sb3BlejJAdXRwLmVkdS5jbyIsImlhdCI6MTcyNjY4MTkzMiwiZXhwIjoxNzQzOTYxOTMyfQ.B4COfQ30uuvJjfW-t7nRCm6uSoFq_sVpEip5iy5S6rQ",
         "Content-type": "application/json"
       },
       body: JSON.stringify(body)
-    })
-    .then( res => res.json())
-    
-    fetch(`https://fake-api-vq1l.onrender.com/posts/${id}`, {
-      method: "DELETE", 
-      headers: {
-        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjE1LCJlbWFpbCI6InN0ZXZlbi5sb3BlejJAdXRwLmVkdS5jbyIsImlhdCI6MTcyNjY4MTkzMiwiZXhwIjoxNzQzOTYxOTMyfQ.B4COfQ30uuvJjfW-t7nRCm6uSoFq_sVpEip5iy5S6rQ",
-      },
     })
     .then( res => res.json())
     .then( res => {
