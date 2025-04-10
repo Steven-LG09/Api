@@ -9,7 +9,6 @@ This is a RESTful API designed to manage apartment rental data. It provides endp
 
 ## 🛠️ Technologies Used
 
-- Node.js / Express.js  
 - Postman for testing 
 
 ## 📦 “Build the systems that power the world you want to see.”
